@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import Title from "../components/title";
 import Round from "../components/round";
 import TeamName from "../components/team-name.js";
-import QuestionBoard from "../components/question-board.js";
 import Final from "../components/final";
 import "tailwindcss/tailwind.css";
 import cookieCutter from "cookie-cutter";
@@ -134,9 +133,8 @@ export default function Game(props) {
       );
     } else {
       gameSession = (
-        <div class="flex flex-col space-y-10 py-5">
+        <div class="flex flex-col p-10 bg-gray-700">
           <Round game={game} />
-          <QuestionBoard round={game.rounds[game.round]} />
           <div class="flex flex-row justify-around">
             <TeamName game={game} team={0} />
             <TeamName game={game} team={1} />
