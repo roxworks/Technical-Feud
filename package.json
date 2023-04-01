@@ -33,6 +33,10 @@
     "start_windows": "set NODE_ENV=production && node server.js",
     "parse-locales": "i18next-scanner --config ./i18n/i18next-scanner.config.js"
   },
+   "engines" : { 
+    "npm" : ">=8.0.0 <9.0.0",
+    "node" : ">=16.0.0 <17.0.0"
+  },
   "devDependencies": {
     "i18next-scanner": "^3.0.0"
   }
