@@ -5,38 +5,23 @@ import "../i18n/i18n";
 function Answers(props) {
   const { t } = useTranslation();
   return props.round.map((x) => (
-    <div
-      class="flex flex-row space-x-2"
-      style={{
-        minWidth: 0,
-      }}
-    >
-      <div
-        class="bg-black font-extrabold uppercase items-center text-center p-5 rounded  flex-grow flex-shrink"
-        style={{ minHeight: 70, minWidth: 0 }}
-      >
+    <div class="flex flex-row space-x-2 h-40 justify-center" style={{ minWidth: 0 }}>
+      <div class="bg-black font-extrabold h-full flex uppercase items-center text-center p-5 rounded w-full">
         {x.revealed ? (
-          <p
-            class={`text-2xl ${props.hide ? "invisible" : ""}`}
-            style={{
-              whiteSpace: "nowrap",
-              overflow: "hidden",
-              textOverflow: "ellipsis",
-              flex: 1,
-            }}
-          >
+          <p class={`text-4xl ${props.hide ? "invisible" : ""}`} style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
             {x.input}
           </p>
         ) : null}
       </div>
-      <div class="bg-black w-16 font-extrabold uppercase flex justify-center items-center rounded">
+      <div class="bg-black w-24 h-full font-extrabold uppercase flex justify-center items-center rounded">
         {x.revealed ? (
-          <p class={`text-2xl ${props.hide ? "invisible" : ""}`}>
+          <p class={`text-4xl ${props.hide ? "invisible" : ""}`}>
             {t("number", { count: x.points })}
           </p>
         ) : null}
       </div>
     </div>
+
   ));
 }
 
@@ -54,11 +39,11 @@ export default function Final(props) {
   });
   return (
     <div class="">
-      <div class="text-center my-10">
+      {/* <div class="text-center my-10">
         <p class="text-3xl">{t("Fast Money")}</p>
-      </div>
+      </div> */}
       <div
-        class="border-8 bg-blue-800 p-5 border-black rounded-3xl grid lg:grid-rows-4 lg:grid-flow-col gap-3 text-white "
+        class="border-8 bg-blue-800 p-5 border-black rounded-3xl grid grid-cols-2 grid-rows-4 grid-flow-col gap-3 text-white "
         style={{}}
       >
         <Answers
