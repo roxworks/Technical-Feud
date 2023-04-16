@@ -122,18 +122,18 @@ const ioHandler = (req, res) => {
       for (const [room, roomData] of Object.entries(rooms)) {
         if (roomData.game?.tick) {
           if (roomData.game.tick) {
-            if (moreThanOneHourAgo(new Date(roomData.game.tick))) {
-              console.debug("clearing room, no activity for 1 hour: ", room);
-              wss.broadcast(room, JSON.stringify({ action: "data", data: {} }));
-              wss.broadcast(
-                room,
-                JSON.stringify({
-                  action: "error",
-                  message: "game closed, no activity for 1 hour",
-                })
-              );
-              delete rooms[room];
-            }
+            // if (moreThanOneHourAgo(new Date(roomData.game.tick))) {
+            //   console.debug("clearing room, no activity for 1 hour: ", room);
+            //   wss.broadcast(room, JSON.stringify({ action: "data", data: {} }));
+            //   wss.broadcast(
+            //     room,
+            //     JSON.stringify({
+            //       action: "error",
+            //       message: "game closed, no activity for 1 hour",
+            //     })
+            //   );
+            //   delete rooms[room];
+            // }
           }
         }
       }

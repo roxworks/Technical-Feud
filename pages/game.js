@@ -64,7 +64,7 @@ export default function Game(props) {
           audio.play();
         } else if (json.action === "quit") {
           setGame({});
-          window.close();
+          // window.close();
         } else if (json.action === "reveal") {
           var audio = new Audio("good-answer.mp3");
           audio.play();
@@ -125,20 +125,20 @@ export default function Game(props) {
       gameSession = <Title game={game} />;
     } else if (game.is_final_round) {
       gameSession = (
-        <div class="flex w-full justify-center">
-          <div class="lg:w-5/6 sm:w-11/12 sm:px-8 md:w-4/6 w-11/12 flex flex-col space-y-6 pt-5">
+        <div class="flex w-full bg-gray-700 justify-center min-h-screen">
+          <div class="lg:w-5/6 sm:w-11/12 sm:px-8 flex flex-col space-y-6 pt-5 justify-center">
             <Final game={game} timer={timer} />
           </div>
         </div>
       );
     } else {
       gameSession = (
-        <div class="flex flex-col p-10 bg-gray-700">
+        <div class="flex flex-col p-10 bg-gray-700 min-h-screen">
           <Round game={game} />
-          <div class="flex flex-row justify-around">
+          {/* <div class="flex flex-row justify-around">
             <TeamName game={game} team={0} />
             <TeamName game={game} team={1} />
-          </div>
+          </div> */}
         </div>
       );
     }
