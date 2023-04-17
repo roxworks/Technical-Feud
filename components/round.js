@@ -50,7 +50,7 @@ export default function Round(props) {
       </div>
 
       <div class="flex flex-row justify-center">
-        <p class="uppercase text-red-200 text-3xl font-bold">{round.question}</p>
+        <p class="uppercase text-red-200 text-4xl font-bold">{round.question}</p>
       </div>
 
       <div class="w-full py-2 flex-grow">
