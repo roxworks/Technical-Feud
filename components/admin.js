@@ -89,7 +89,7 @@ function FinalRoundButtonControls(props) {
             props.setGame((prv) => ({ ...prv }));
           }}
         />
-        <select
+        {/* <select
           value={x.selection}
           class="border-4 rounded p-2 text-2xl flex-grow"
           onChange={(e) => {
@@ -103,7 +103,22 @@ function FinalRoundButtonControls(props) {
               {x.answers[index][0]} {x.answers[index][1]}
             </option>
           ))}
-        </select>
+        </select> */}
+        <div className="flex flex-col">
+          {x.answers.map((key, index) => (
+            <button
+              key={index}
+              className={`border-4 rounded p-2 text-2xl flex-grow ${x.selection === index ? "bg-gray-200" : ""}`}
+              onClick={() => {
+                x.selection = index;
+                props.setGame((prv) => ({ ...prv }));
+                props.send({ action: "data", data: props.game });
+              }}
+            >
+              {x.answers[index][0]} {x.answers[index][1]}
+            </button>
+          ))}
+        </div>
         {/* FINAL ROUND ANSWER BUTTON GROUP */}
       </div>
       <div class="flex flex-row ">
