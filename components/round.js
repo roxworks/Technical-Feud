@@ -38,7 +38,7 @@ export default function Round(props) {
   let current_round = props.game.round;
   let round = props.game.rounds[current_round];
   return (
-    <div class="w-auto flex flex-grow flex-col space-y-1 items-center border-4 border-red-200 rounded-3xl p-2">
+    <div class="w-auto flex flex-grow flex-col space-y-1 items-center rounded-3xl p-2">
       <div class="flex flex-row justify-center">
         {round.multiply > 1 ? (
           <div>

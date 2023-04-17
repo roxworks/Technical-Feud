@@ -117,8 +117,6 @@ export default function Buzzer(props) {
           <>
             {!game.title && !game.is_final_round ? (
               <div class="pt-8 flex flex-col space-y-5">
-                <Round game={game} />
-
                 {/* Buzzer Section TODO replace with function*/}
                 <div class="" style={{ width: "100%", textAlign: "center" }}>
                   {buzzed ? (
@@ -143,14 +141,15 @@ export default function Buzzer(props) {
                     <p class="text-2xl text-red-700">{error}</p>
                   ) : null}
                 </div>
+                <Round game={game} />
                 {/* END Buzzer Section TODO replace with function*/}
                 <div class="flex flex-row justify-between min-w-full space-x-3">
                   <TeamName game={game} team={0} />
                   <TeamName game={game} team={1} />
                 </div>
-                <div class="">
+                {/* <div class="">
                   <QuestionBoard round={game.rounds[game.round]} />
-                </div>
+                </div> */}
                 <div class="border-4 rounded space-y-2 text-center flex-grow w-full">
                   <div class="flex flex-col">
                     {game.buzzed.map((x, i) => (

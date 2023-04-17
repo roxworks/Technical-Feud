@@ -10,7 +10,7 @@ export default function QuestionBoard(props) {
         class="rounded-3xl grid grid-cols-2 grid-rows-4 grid-flow-col gap-3 bg-transparent flex-grow"
       >
         {props.round.answers.map((x, index) => (
-          <div class="col-span-1 row-span-1 h-44 rounded-base cursor-pointer bg-transparent border-4 border-red-200 uppercase items-center text-center rounded font-extrabold">
+          <div class="col-span-1 row-span-1 h-44 cursor-pointer bg-transparent border-4 border-red-200 uppercase items-center text-center rounded-xl font-extrabold">
             {x.trig ? (
               // answered question
               <div class="h-full py-10">
