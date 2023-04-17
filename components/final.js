@@ -5,7 +5,7 @@ import "../i18n/i18n";
 function Answers(props) {
   const { t } = useTranslation();
   return props.round.map((x) => (
-    <div class="flex flex-row space-x-2 h-40 justify-center" style={{ minWidth: 0 }}>
+    <div class="flex flex-row space-x-2 h-24 justify-center" style={{ minWidth: 0 }}>
       <div class="bg-black font-extrabold h-full flex uppercase items-center text-center p-5 rounded w-full">
         {x.revealed ? (
           <p class={`text-4xl ${props.hide ? "invisible" : ""}`} style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>
@@ -43,7 +43,7 @@ export default function Final(props) {
         <p class="text-3xl">{t("Fast Money")}</p>
       </div> */}
       <div
-        class="border-8 bg-blue-800 p-5 border-black rounded-3xl grid grid-cols-2 grid-rows-4 grid-flow-col gap-3 text-white "
+        class="border-8 bg-blue-800 p-5 border-black rounded-3xl grid grid-cols-2 grid-rows-8 grid-flow-col gap-3 text-white "
         style={{}}
       >
         <Answers
@@ -72,11 +72,11 @@ export default function Final(props) {
       </div>
 
       {/* WIN TEXT */}
-      <div class="text-center">
+      {/* <div class="text-center">
         {total >= 200 ? (
           <p class="text-5xl text-green-800">{t("win")}</p>
         ) : null}
-      </div>
+      </div> */}
     </div>
   );
 }
